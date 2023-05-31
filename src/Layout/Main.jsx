@@ -1,13 +1,15 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Footer from '../Pages/Sheard/Footer/Footer';
 import Navbar from '../Pages/Sheard/Navbar/Navbar';
 
 const Main = () => {
+    const location = useLocation();
+    const noHearerFooter = location.pathname.includes('login') ||  location.pathname.includes('signUp');
     return (
         <div>
-            <Navbar></Navbar>
+            {noHearerFooter || <Navbar></Navbar>}
             <Outlet></Outlet>
-            <Footer></Footer>
+            {noHearerFooter|| <Footer></Footer>}
         </div>
     );
 };

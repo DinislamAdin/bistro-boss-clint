@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 const MenuItem = ({item}) => {
 
@@ -12,9 +13,7 @@ const MenuItem = ({item}) => {
                 <p className="uppercase">{name}-----------</p>
                 <p>{recipe}</p>
             </div>
-            <div>
                 <p className="text-yellow-500">${price}</p>
-            </div>
         </div>
     );
 };
